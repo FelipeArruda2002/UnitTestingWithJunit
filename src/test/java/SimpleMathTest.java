@@ -66,4 +66,9 @@ public class SimpleMathTest {
         Assertions.assertEquals(3, actual, () -> "Failed test did not produce the expected result");
     }
 
+    @Test
+    @Disabled
+    public void testDisabled() {
+    }
+
 }
