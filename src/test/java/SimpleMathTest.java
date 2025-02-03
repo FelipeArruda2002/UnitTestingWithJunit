@@ -79,4 +79,15 @@ public class SimpleMathTest {
     public void testDisabled() {
     }
 
+    @Test
+    @DisplayName("Division by zero should return an Arithmetic Exception")
+    public void testDivisionByZero() {
+        String expectedMessage = "Impossible to division by zero!";
+
+        ArithmeticException arithmeticException = Assertions.assertThrows(ArithmeticException.class,
+                () -> simpleMath.division(10.0, 0.0), "Division by zero did not return an arithmetic exception");
+
+        Assertions.assertEquals(expectedMessage, arithmeticException.getMessage(), "Unexpected execution message");
+    }
+
 }
