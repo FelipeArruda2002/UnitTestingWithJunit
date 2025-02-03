@@ -2,6 +2,7 @@ import com.felipearruda.math.SimpleMath;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class SimpleMathTest {
 
@@ -101,6 +102,16 @@ public class SimpleMathTest {
 
 
         Assertions.assertArrayEquals(expectedArray, numbers);
+    }
+
+    @Test
+    //@Timeout(1)
+    @Timeout(value = 1, unit = TimeUnit.MILLISECONDS)
+    public void performanceTest() {
+        long [] numbers = {1};
+        for (long i = 0; i <= 100000000l; i++) {
+            numbers[0] = i;
+        }
     }
 
 }
