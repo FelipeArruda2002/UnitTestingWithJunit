@@ -1,6 +1,8 @@
 import com.felipearruda.math.SimpleMath;
 import org.junit.jupiter.api.*;
 
+import java.util.Arrays;
+
 public class SimpleMathTest {
 
     static SimpleMath simpleMath;
@@ -88,6 +90,17 @@ public class SimpleMathTest {
                 () -> simpleMath.division(10.0, 0.0), "Division by zero did not return an arithmetic exception");
 
         Assertions.assertEquals(expectedMessage, arithmeticException.getMessage(), "Unexpected execution message");
+    }
+
+    @Test
+    public void testComparingArrays() {
+        int [] numbers = {2,4,5,3,1};
+        int [] expectedArray = {1, 2, 3, 4, 5};
+
+        Arrays.sort(numbers);
+
+
+        Assertions.assertArrayEquals(expectedArray, numbers);
     }
 
 }
