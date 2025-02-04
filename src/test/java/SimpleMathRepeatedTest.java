@@ -1,6 +1,7 @@
 import com.felipearruda.math.SimpleMath;
 import org.junit.jupiter.api.*;
 
+@Order(2)
 public class SimpleMathRepeatedTest {
 
     static SimpleMath simpleMath;

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
+@Order(3)
 public class SimpleMathTest {
 
     static SimpleMath simpleMath;
