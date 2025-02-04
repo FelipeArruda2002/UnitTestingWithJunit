@@ -2,12 +2,12 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-@TestMethodOrder(MethodOrderer.Random.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class SimpleMathTestWithOrdering {
 
     @Test
-    void testA() {
-        System.out.println("Running test A...");
+    void testC() {
+        System.out.println("Running test C...");
     }
 
     @Test
@@ -16,12 +16,14 @@ public class SimpleMathTestWithOrdering {
     }
 
     @Test
-    void testC() {
-        System.out.println("Running test C...");
-    }
-    
-    @Test
     void testD() {
         System.out.println("Running test D...");
     }
+
+    @Test
+    void testA() {
+        System.out.println("Running test A...");
+    }
+
+
 }
