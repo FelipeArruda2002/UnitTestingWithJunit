@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -34,6 +35,14 @@ public class SimpleMathParameterizedTest {
     })
     @ParameterizedTest
     public void test_multiplication_with_csv_source(Double firstNumber, Double secondNumber, Double expected) {
+        double actual = simpleMath.multiplication(firstNumber, secondNumber);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @CsvFileSource(resources = "/multiplication_file_source.csv")
+    @ParameterizedTest
+    public void test_multiplication_with_csv_file_source(Double firstNumber, Double secondNumber, Double expected) {
         double actual = simpleMath.multiplication(firstNumber, secondNumber);
 
         Assertions.assertEquals(expected, actual);
