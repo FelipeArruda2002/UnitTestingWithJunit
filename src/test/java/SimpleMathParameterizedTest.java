@@ -2,10 +2,7 @@ import com.felipearruda.math.SimpleMath;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
@@ -46,6 +43,12 @@ public class SimpleMathParameterizedTest {
         double actual = simpleMath.multiplication(firstNumber, secondNumber);
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"Cr7, Neymar"})
+    public void testValueSource(String name) {
+        Assertions.assertNotNull(name);
     }
 
     public static Stream<Arguments> parameterized_multiplication_test() {
