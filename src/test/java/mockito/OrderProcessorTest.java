@@ -2,22 +2,22 @@ package mockito;
 
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import service.mockito.EmailService;
 import service.mockito.OrderProcessor;
 
+@ExtendWith(MockitoExtension.class)
 public class OrderProcessorTest {
 
+    @Mock
     EmailService emailService;
+    @InjectMocks
     OrderProcessor orderProcessor;
-
-    @BeforeEach
-    void setup() {
-        emailService = Mockito.mock(EmailService.class);
-        orderProcessor = new OrderProcessor(emailService);
-    }
 
     @Test
     void should_SendEmail_When_OrderIsProcessed() {
